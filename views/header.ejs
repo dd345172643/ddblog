@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset = 'UTF-8'/>
+    <title>blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script charset = 'utf-8' src = '/kindEditor/kindeditor-all-min.js'></script>
+    <script charset = 'utf-8' src = '/kindEditor/lang/zh-CN.js'></script>
+    <script>
+    	var editor;
+    	KindEditor.ready(function(K){
+    		editor = K.create('textarea',{
+    			allowImageUpload:false,
+    			item:[
+    				'fontname','fontsize','|','forecolor','hilitecolor','bold','italic',
+    				'underline','removeformat','|','justifyleft','justtifycenter','justifyright',
+    				'insertorderedlist','insertunorderedlist','|','emotions','image','link'
+    			]
+    		})
+    	})
+    </script>
+  </head>
+  <body>
+  	<header>
+  		<h1><%= title %></h1>
+  	</header>
+  	<nav>
+  	
+  		<span><a href="/" title='主页'>home</a></span>
+  		<% if(!user) {%>
+  		<span><a href="/login" title='登陆'>login</a></span>	
+  		<span><a href="/register" title='注册'>register</a></span>
+  		<% } else { %>
+  		<span><a href="/upload" title='上传'>upload</a></span>
+  		<span><a href="/post" title='发表'>post</a></span>
+  		<span><a href="/logout" title='登出'>logout</a></span>
+  		<% } %>
+  	</nav>
+		<article>
+		<span><%= error %></span>
+		<span><%= success %></span>

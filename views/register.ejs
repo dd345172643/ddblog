@@ -1,0 +1,17 @@
+<%- include header %>
+	<form action="" method='post'>
+		用户名：<input type="text" name ='name' placeholder="请输入您的账号" /><br /><br />
+		密码：    <input type="password" name='password' placeholder="请输入您的密码" /><br /><br />
+		确认密码：<input type="password" name='password-repeat' placeholder="请输入您的密码" /><br /><br />
+		<!--这里监听表单的提交，一定要标明input上的name属性-->
+		邮箱：<input type="text" name='email' placeholder="请输入您的邮箱" />
+		
+		<a class='ver' href='javascript:;'>获取验证码</a><br /><br />
+		<input type="text" name='verCode' placeholder="请填写您的验证码"/><br /><br />
+		<input type="submit" value='注册' />	
+		<span><%= error %></span>	
+	</form>
+	<script src='/js/register.js'></script>
+<%- include footer %>
+			
+  
